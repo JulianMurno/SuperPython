@@ -1,0 +1,5 @@
+vendedor = input("Nombre del vendedor: ")
+ingreso = float(input("Ingrese monto de venta:  $"))
+comision =  round((ingreso * 0.13), 2)
+print(f"La comision del vendedor {vendedor} es: ${comision}")
+print (f"La ganancia neta es de: ${round((ingreso - comision), 2)}")

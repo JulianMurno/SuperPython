@@ -1,9 +1,10 @@
 # La consigna es esta: el programa le va a preguntar al usuario su nombre, y luego le va a decir algo así como “Bueno, Juan, he pensado un número entre 1 y 100, y tienes solo ocho intentos para adivinar cuál crees que es el número”.
 from random import *
 vidas =  8
+nombre = input("Hola! Como te llamas: ")
 
 # Obtener numero random entre 1 y 100
-print("Bueno, Juan, he pensado un número entre 1 y 100, y tienes solo ocho intentos para adivinar cuál crees que es el número")
+print(f"Bueno, {nombre}, he pensado un número entre 1 y 100, y tienes solo ocho intentos para adivinar cuál crees que es el número")
 numero = randint(1, 100)
 
 # print(numero)

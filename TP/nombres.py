@@ -36,6 +36,8 @@ def mostrar_menu():
         6. Invertir los nombres.
         7. Mostrar solo los nombres que empiezan con una letra en particular.
         8. Buscar si un nombre está en la lista.
+        9. Análisis de longitud de nombres mayores a 5 letras.
+        10. Eliminar nombre.
         0. Salir.
     """)
 
@@ -55,6 +57,11 @@ def analisis_longitud(nombres):
         nombre_corto = min(nombres, key=len)
         print(f"Nombre más largo: {nombre_largo} ({len(nombre_largo)} letras).")
         print(f"Nombre más corto: {nombre_corto} ({len(nombre_corto)} letras).")
+
+# Contar nombres con más de 5 caracteres
+def longitud_mayor_5(nombres):
+        nombres_largos = [nombre for nombre in nombres if len(nombre) > 5]
+        print(f"Nombres con más de 5 caracteres: {len(nombres_largos)}")
 
 # Contar vocales y consonantes
 def contar_vocales_consonantes(nombres):
@@ -101,6 +108,14 @@ def buscar_nombre(nombres):
         print(f"El nombre '{nombre_buscado}' no está en la lista.")
 
        
+def eliminar_nombre(nombres):
+    nombre_eliminar = input("Ingrese el nombre que desea eliminar: ")
+    if nombre_eliminar in nombres:
+        nombres.remove(nombre_eliminar)
+        print(f"El nombre '{nombre_eliminar}' ha sido eliminado.")
+    else:
+        print(f"El nombre '{nombre_eliminar}' no se encontró en la lista.")
+    return nombres
 
 # Ingreso y ciclo del menú principal
 nombres = ingresar_nombres()
@@ -124,6 +139,10 @@ while True:
         nombres_por_letra(nombres)
     elif opcion == "8":
         buscar_nombre(nombres)
+    elif opcion == "9":
+        longitud_mayor_5(nombres) 
+    elif opcion == "10":
+        eliminar_nombre(nombres)
     elif opcion == "0":
         print("Programa finalizado.")
         break
